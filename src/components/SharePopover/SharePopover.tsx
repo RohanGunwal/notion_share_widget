@@ -5,7 +5,7 @@ import { useDataContext } from "../../contexts/DataContext";
 import PopoverFooter from "../Footer/PopoverFooter/PopoverFooter";
 import PopoverHeader from "../Header/PopoverHeader/PopoverHeader";
 import InviteButton from "../UI/InviteButton/InviteButton";
-import SearchBar from "../UI/SearchBar/SearchBar";
+import PopoverSearchBar from "../UI/SearchBar/PopoverSearchBar/PopoverSearchBar";
 
 export default function SharePopover() {
   const {
@@ -45,18 +45,21 @@ export default function SharePopover() {
         </button>
       </PopoverTrigger>
       <PopoverContent>
-        <div className="content | w-96 border rounded-lg shadow-lg flex flex-col">
+        <div
+          className="content | border rounded-lg shadow-lg flex flex-col"
+          style={{ width: "450px" }}
+        >
           <PopoverHeader />
           <section
-            className="search_wrapper | flex border-t p-2"
+            className="search_wrapper | flex border-t p-2 bg-white"
             onClick={() => {
               setModalState(true);
             }}
           >
-            <SearchBar />
+            <PopoverSearchBar />
             <InviteButton />
           </section>
-          <section className="px-2 pb-2 flex">
+          <section className="px-3 pb-2 flex flex-col gap-2 bg-white w-full">
             {data?.details.map(
               (
                 detail: {
@@ -70,24 +73,31 @@ export default function SharePopover() {
                 index: number
               ) => {
                 return (
-                  <div key={detail.id} className="flex items-center">
-                    {detail.imageSrc && (
-                      <img
-                        src={detail.imageSrc}
-                        alt=""
-                        className="w-10 h-10 rounded-full object-contain"
-                      ></img>
-                    )}
-                    {!detail.imageSrc && (
-                      <span className="flex items-center justify-center w-10 h-10 rounded-md text-white bg-gray-500"></span>
-                    )}
-                    <div className="flex flex-col ml-2">
-                      <p className="mt-0">{detail.name}</p>
-                      <p className="text-sm text-gray-500">
-                        {detail.email
-                          ? detail.email
-                          : detail.quantity + " workspace members"}
-                      </p>
+                  <div
+                    key={detail.id}
+                    className="flex items-center justify-between w-full"
+                  >
+                    <div className="flex">
+                      {detail.imageSrc && (
+                        <img
+                          src={detail.imageSrc}
+                          alt=""
+                          className="w-10 h-10 rounded-full object-contain"
+                        ></img>
+                      )}
+                      {!detail.imageSrc && (
+                        <span className="flex items-center justify-center w-10 h-10 rounded-md text-white bg-gray-500">
+                          {detail.name.substring(0, 1)}
+                        </span>
+                      )}
+                      <div className="flex flex-col ml-2">
+                        <p className="mt-0">{detail.name}</p>
+                        <p className="text-sm text-gray-500">
+                          {detail.email
+                            ? detail.email
+                            : detail.quantity + " workspace members"}
+                        </p>
+                      </div>
                     </div>
                     <div className="ml-20">
                       <Menu>
