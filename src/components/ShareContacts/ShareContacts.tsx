@@ -36,13 +36,15 @@ export default function ShareContacts() {
         setGroupStartIndex={setGroupStartIndex}
         setSearchSuggestions={setSearchSuggestions}
       />
-      <div className="" onMouseLeave={() => setActiveContact(-1)}>
+      <div className="p-3 h-80" onMouseLeave={() => setActiveContact(-1)}>
         {searchSuggestions.map((ele, index) => {
           return (
             <div key={ele.id}>
               {index === groupStartIndex ? (
                 <div>
-                  <span>Select a group</span>
+                  <span className="text-gray-700 font-semibold">
+                    Select a group
+                  </span>
                 </div>
               ) : index === 0 ? (
                 <div className="text-gray-700 font-semibold">
@@ -52,7 +54,7 @@ export default function ShareContacts() {
                 ""
               )}
               <div
-                className={`flex items-center p-2 ${
+                className={`flex items-center px-3 py-2 ${
                   activeContact === index ? "bg-gray-200" : "bg-white"
                 }rounded-md cursor-pointer`}
                 onClick={() => {

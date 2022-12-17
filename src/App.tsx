@@ -7,7 +7,7 @@ import { useDataContext } from "./contexts/DataContext";
 function App() {
   const { isModalOpen, setModalState }: any = useDataContext();
   return (
-    <div className="App | h-screen py-20 px-48 bg-gray-100">
+    <div className="App | h-screen flex items-start py-20 justify-center bg-gray-100">
       <SharePopover />
 
       <Modal
