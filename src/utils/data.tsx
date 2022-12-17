@@ -1,24 +1,24 @@
 const users = [
   {
-    id: 1,
+    id: "user1",
     name: "Wade Cooper",
     imageSrc: "/assets/Images/Wade.png",
     email: "wade@oslash.com",
   },
   {
-    id: 2,
+    id: "user2",
     name: "Arlene Mccoy",
     imageSrc: "/assets/Images/Arlene.png",
     email: "arlene@oslash.com",
   },
   {
-    id: 3,
+    id: "user3",
     name: "Tim Cook",
     imageSrc: "/assets/Images/timCook.png",
     email: "tim@oslash.com",
   },
   {
-    id: 4,
+    id: "user4",
     name: "Rohan",
     imageSrc: "",
     email: "rohan@oslash.com",
@@ -27,13 +27,13 @@ const users = [
 
 const groups = [
   {
-    id: 1,
-    group_name: "Product",
+    id: "group1",
+    name: "Product",
     quantity: 20,
   },
   {
-    id: 2,
-    group_name: "Engineering",
+    id: "group2",
+    name: "Engineering",
     quantity: 30,
   },
 ];
