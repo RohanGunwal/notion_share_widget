@@ -28,7 +28,7 @@ export function DataContext({ children }: { children: React.ReactNode }) {
       details: [
         {
           name: "Everyone at OSlash",
-          imageSrc: "/assets/oslash-logo.png",
+          imageSrc: "/assets/Images/oslash-logo.png",
           id: "Everyone",
           options: "No access",
           quantity: 25,
